@@ -1,0 +1,17 @@
+package test;
+
+import java.lang.String;
+
+rule "firstRule"
+    when
+        $object : Object(eval($object instanceof String))
+    then
+        System.out.println("first rule");
+end
+
+rule "secondRule"
+    when
+        $object : Object(eval($object instanceof String) && true)
+    then
+        System.out.println("second rule");
+end
